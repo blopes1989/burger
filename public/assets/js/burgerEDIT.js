@@ -1,7 +1,9 @@
+$( document ).ready(function() {
+console.log('are you working?')
 //pull database
-$.get("/api/data/burger")
+$.get("/")
 .then((results) => {
-    console.log(results)
+    console.log("test")
 }
 )
 
@@ -11,12 +13,14 @@ $.get("/api/data/burger")
 // submit button that listens to click function that captures form
 $(".submit").click(function (event) {
     event.preventDefault()
+    console.log("burger_name")
+    console.log($(".submission").val())
     $(".submission").val()
-    $( ".submissionCard" ).replaceWith( $( ".submission" ) )
+    $( ".submissionCard" ).text( $( ".submission" ).val() )
 
     $.post("api/data/burger")
     .then((event) =>{
-
+    
 
     })
 })
@@ -32,4 +36,4 @@ $(".devour").click(function (event){
     //burger needs to go from not devoured to devoured in database
 })
 
-
+})

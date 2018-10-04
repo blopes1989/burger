@@ -1,13 +1,13 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Burger APP</h1>
+    <h1 class="display-8">Burger APP</h1>
     <p class="lead">Enter a burger so it gets devoured by our Database for ever!</p>
   </div>
 </div>
 
 <form>
   <div class="form-row">
-    <div class="col-1">
+    <div class="col-10">
       <input type="text" class="form-control submission" placeholder="Enter Burger Ingrediants Here">
     </div>
 
@@ -15,16 +15,34 @@
 </form>
 
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
+<div class="card col-12">
+  <div class="card-body col-12 alert-primary">
     <h5 class="card-title">Submitted</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Would you like to devour this burger</h6>
-    <p class="card-text submissionCard">SUBMIT BURGER GOES HERE</p>
+    <p class="card-text submissionCard">Entered Burger</p>
     <button type="submit" class="btn btn-success devour">Devour</button>
-    <button type="submit" class="btn btn-danger edit">Edit</button>
 
   </div>
 </div>
 
 
+<div class="alert alert-warning col-12">
 
+{{#each burger_name}}
+    {{#if devoured}}
+    <h4>{{burger_name }}</h4>
+    {{/if}}
+    {{/each}}
+
+
+</div>
+
+<div class="alert alert-danger col-12">
+{{#each burger_name}}
+    {{#unless devoured}}
+    <h4>{{burger_name }}</h4>
+    <button type="submit" class="btn btn-success devour">Devour</button>
+    {{/unless}}
+    {{/each}}
+
+
+</div>
